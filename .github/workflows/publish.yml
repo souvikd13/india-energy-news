@@ -2,6 +2,9 @@ name: Publish India Energy News
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
   schedule:
     # 08:00 IST every day. GitHub cron uses UTC.
     - cron: "30 2 * * *"
