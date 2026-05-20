@@ -1,0 +1,124 @@
+{
+  "siteTitle": "India Energy News Digest",
+  "siteDescription": "A daily India-focused digest covering power, renewables, oil, gas, coal, grid, storage, hydrogen, and policy.",
+  "lookbackHours": 24,
+  "maxItems": 40,
+  "subjectPrefix": "India Energy News Digest",
+  "recipients": [
+    "recipient@example.com"
+  ],
+  "keywords": [
+    "india",
+    "indian",
+    "bharat",
+    "ministry of power",
+    "mnre",
+    "cea",
+    "cerc",
+    "seci",
+    "ntpc",
+    "nhpc",
+    "power grid",
+    "powergrid",
+    "grid-india",
+    "discom",
+    "tariff",
+    "open access",
+    "iex",
+    "pxil",
+    "rpo",
+    "fdre",
+    "green hydrogen",
+    "ethanol blending",
+    "city gas",
+    "cng",
+    "png",
+    "ongc",
+    "oil india",
+    "gail",
+    "indian oil",
+    "bpcl",
+    "hpcl",
+    "coal india",
+    "adani green",
+    "tata power",
+    "jsw energy",
+    "renew power",
+    "acme solar",
+    "energy",
+    "electricity",
+    "power",
+    "oil",
+    "natural gas",
+    "lng",
+    "coal",
+    "renewable",
+    "solar",
+    "wind",
+    "battery",
+    "storage",
+    "grid",
+    "nuclear power",
+    "hydrogen"
+  ],
+  "excludeKeywords": [
+    "rowing",
+    "football",
+    "basketball",
+    "baseball",
+    "cricket",
+    "nato border",
+    "nuclear drill",
+    "nuclear weapon",
+    "missile",
+    "edible oil",
+    "palm oil",
+    "cooking oil",
+    "whisky",
+    "scotch",
+    "stock price",
+    "share price",
+    "dividend",
+    "q4 results",
+    "moto ",
+    "motorola",
+    "smartphone",
+    "loan default",
+    "fake fireman",
+    "balance of payments"
+  ],
+  "feeds": [
+    {
+      "name": "ET EnergyWorld - Power",
+      "url": "https://energy.economictimes.indiatimes.com/rss/power"
+    },
+    {
+      "name": "ET EnergyWorld - Renewable",
+      "url": "https://energy.economictimes.indiatimes.com/rss/renewable"
+    },
+    {
+      "name": "ET EnergyWorld - Oil and Gas",
+      "url": "https://energy.economictimes.indiatimes.com/rss/oil-and-gas"
+    },
+    {
+      "name": "ET EnergyWorld - Coal",
+      "url": "https://energy.economictimes.indiatimes.com/rss/coal"
+    },
+    {
+      "name": "Google News India - Power",
+      "url": "https://news.google.com/rss/search?q=India%20(%22power%20sector%22%20OR%20electricity%20OR%20DISCOM%20OR%20tariff%20OR%20%22power%20grid%22)%20when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+    },
+    {
+      "name": "Google News India - Renewables",
+      "url": "https://news.google.com/rss/search?q=India%20(solar%20OR%20wind%20OR%20renewable%20OR%20battery%20OR%20storage%20OR%20%22green%20hydrogen%22)%20when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+    },
+    {
+      "name": "Google News India - Oil Gas Coal",
+      "url": "https://news.google.com/rss/search?q=India%20(oil%20OR%20%22natural%20gas%22%20OR%20LNG%20OR%20coal%20OR%20petroleum%20OR%20refinery)%20when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+    },
+    {
+      "name": "Google News India - Policy",
+      "url": "https://news.google.com/rss/search?q=India%20(MNRE%20OR%20%22Ministry%20of%20Power%22%20OR%20CERC%20OR%20CEA%20OR%20SECI%20OR%20NTPC)%20when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen"
+    }
+  ]
+}
