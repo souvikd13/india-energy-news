@@ -142,6 +142,7 @@ def category_for(item: NewsItem) -> str:
 
 def render_site(config: dict, items: list[NewsItem]) -> str:
     now_ist = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+    generated_date = now_ist.strftime("%Y-%m-%d")
     cards = []
     for item in items:
         published_ist = item.published.astimezone(timezone(timedelta(hours=5, minutes=30)))
@@ -172,6 +173,9 @@ def render_site(config: dict, items: list[NewsItem]) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>{html.escape(config['siteTitle'])}</title>
   <style>
     :root {{ --ink:#17242c; --muted:#60717c; --line:#d9e1e5; --bg:#f6f8f9; --panel:#fff; --teal:#087f8c; --coral:#c94f3d; }}
@@ -212,7 +216,7 @@ def render_site(config: dict, items: list[NewsItem]) -> str:
       <label>Source<select id="source"><option value="">All sources</option>{source_options}</select></label>
       <label>Search<input id="search" type="search" placeholder="Search title or summary"></label>
     </section>
-    <section class="stats">
+    <section class="stats" data-generated-date="{generated_date}">
       <div class="stat">Stories<b id="count">{len(items)}</b></div>
       <div class="stat">Sources<b>{len(sources)}</b></div>
       <div class="stat">Updated<b>{now_ist.strftime('%d %b, %H:%M')}</b></div>
@@ -230,6 +234,16 @@ def render_site(config: dict, items: list[NewsItem]) -> str:
     const search = document.getElementById('search');
     const count = document.getElementById('count');
     const items = [...document.querySelectorAll('.item')];
+    const stats = document.querySelector('.stats');
+    const generatedDate = stats?.dataset.generatedDate;
+    const today = new Date().toLocaleDateString('en-CA', {{ timeZone: 'Asia/Kolkata' }});
+    const refreshedKey = 'indiaEnergyDigestRefreshDate';
+    if (generatedDate && generatedDate < today && sessionStorage.getItem(refreshedKey) !== today) {{
+      sessionStorage.setItem(refreshedKey, today);
+      const url = new URL(window.location.href);
+      url.searchParams.set('refresh', Date.now().toString());
+      window.location.replace(url.toString());
+    }}
     function applyFilters() {{
       const c = category.value;
       const s = source.value;
